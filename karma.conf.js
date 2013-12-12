@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Fri Nov 29 2013 00:10:37 GMT+0100 (CET)
+// Generated on Thu Dec 05 2013 21:14:59 GMT+0100 (CET)
 
 module.exports = function(config) {
   config.set({
@@ -9,12 +9,17 @@ module.exports = function(config) {
 
 
     // frameworks to use
-    frameworks: ['mocha'],
+    frameworks: ['mocha', 'chai'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      'js/*.js',
+      'src/js/vendor/jquery.js',
+      'src/js/vendor/underscore.js',
+      'src/js/vendor/bootstrap.js',
+      'src/js/vendor/angular.js',
+
+      'src/js/*.js',
       'test/**/*.js'
     ],
 
@@ -27,7 +32,7 @@ module.exports = function(config) {
 
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-    reporters: ['progress'],
+    reporters: ['dots'],
 
 
     // web server port
