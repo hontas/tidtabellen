@@ -1,6 +1,6 @@
+/* jshint indent: 2 */
 /*global module:false*/
 module.exports = function(grunt) {
-'use strict';
 
   // Project configuration.
   grunt.initConfig({
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
           'src/js/vendor/angular.js',
 
           'src/js/*.js'
-          ],
+        ],
         dest: 'public/js/<%= pkg.name %>.js'
       }
     },
