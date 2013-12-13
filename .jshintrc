@@ -4,14 +4,6 @@
  
     "jquery"        : true,
  
-    "predef"        : [  // Custom globals.
-        "beforeEach",
-        "afterEach",
-        "describe",
-        "expect",
-        "it"
-    ],
- 
  
     // Development.
     "debug"         : false,  // Allow debugger statements e.g. browser breakpoints.
