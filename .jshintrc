@@ -5,9 +5,11 @@
     "jquery"        : true,
  
     "predef"        : [  // Custom globals.
+        "beforeEach",
+        "afterEach",
         "describe",
-        "it",
-        "expect"
+        "expect",
+        "it"
     ],
  
  
