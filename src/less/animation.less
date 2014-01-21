@@ -1,0 +1,84 @@
+// Rotating icons
+// --------------------------
+
+.@{fa-css-prefix}-rotate-y {
+  -webkit-animation: rotate-y 2s infinite linear;
+  -moz-animation: rotate-y 2s infinite linear;
+  -o-animation: rotate-y 2s infinite linear;
+  animation: rotate-y 2s infinite linear;
+}
+
+@-moz-keyframes rotate-y {
+  0% { -moz-transform: rotateY(0deg); }
+  100% { -moz-transform: rotateY(359deg); }
+}
+@-webkit-keyframes rotate-y {
+  0% { -webkit-transform: rotateY(0deg); }
+  100% { -webkit-transform: rotateY(359deg); }
+}
+@-o-keyframes rotate-y {
+  0% { -o-transform: rotateY(0deg); }
+  100% { -o-transform: rotateY(359deg); }
+}
+@-ms-keyframes rotate-y {
+  0% { -ms-transform: rotateY(0deg); }
+  100% { -ms-transform: rotateY(359deg); }
+}
+@keyframes rotate-y {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(359deg); }
+}
+
+.@{fa-css-prefix}-wobble-z {
+  -webkit-animation: wobble-z 2s infinite alternate;
+  -moz-animation: wobble-z 2s infinite alternate;
+  -o-animation: wobble-z 2s infinite alternate;
+  animation: wobble-z 2s infinite alternate;
+}
+
+@-moz-keyframes wobble-z {
+  0% { -moz-transform: rotateZ(0deg); }
+  100% { -moz-transform: rotateZ(359deg); }
+}
+@-webkit-keyframes wobble-z {
+  0% { -webkit-transform: rotateZ(0deg); }
+  100% { -webkit-transform: rotateZ(359deg); }
+}
+@-o-keyframes wobble-z {
+  0% { -o-transform: rotateZ(0deg); }
+  100% { -o-transform: rotateZ(359deg); }
+}
+@-ms-keyframes wobble-z {
+  0% { -ms-transform: rotateZ(0deg); }
+  100% { -ms-transform: rotateZ(359deg); }
+}
+@keyframes wobble-z {
+  0% { transform: rotateZ(0deg); }
+  100% { transform: rotateZ(359deg); }
+}
+
+// Bulging icons
+// --------------------------
+
+.@{fa-css-prefix}-bulge {
+  -webkit-animation: bulge 1s infinite;
+  -moz-animation: bulge 1s infinite;
+  -o-animation: bulge 1s infinite;
+  animation: bulge 1s infinite;
+}
+
+@-moz-keyframes bulge {
+  50% { -moz-transform: scale(1.4); }
+}
+@-webkit-keyframes bulge {
+  50% { -webkit-transform: scale(1.4); }
+}
+@-o-keyframes bulge {
+  50% { -o-transform: scale(1.4); }
+}
+@-ms-keyframes bulge {
+  50% { -ms-transform: scale(1.4); }
+}
+@keyframes bulge {
+  50% { transform: scale(1.4); }
+}

@@ -3,6 +3,10 @@
     "browser"       : true,   // Standard browser globals e.g. `window`, `document`.
  
     "jquery"        : true,
+
+    "predef": [
+        "angular"
+    ],
  
  
     // Development.

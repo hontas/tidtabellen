@@ -1,3 +1,5 @@
+/* jshint indent: 2 */
+/* global module */
 // Karma configuration
 // Generated on Thu Dec 05 2013 21:14:59 GMT+0100 (CET)
 
@@ -9,17 +11,21 @@ module.exports = function(config) {
 
 
     // frameworks to use
-    frameworks: ['mocha', 'chai'],
+    frameworks: ['mocha', 'sinon-chai'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      'src/js/vendor/jquery.js',
-      'src/js/vendor/underscore.js',
-      'src/js/vendor/bootstrap.js',
-      'src/js/vendor/angular.js',
+      'src/vendor/jquery.js',
+      'src/vendor/underscore.js',
+      'src/vendor/bootstrap.js',
+      'src/vendor/angular.js',
+      'src/vendor/moment.js',
 
       'src/js/*.js',
+      'src/js/utils/*.js',
+      'src/js/controllers/*.js',
+
       'test/**/*.js'
     ],
 
@@ -32,7 +38,11 @@ module.exports = function(config) {
 
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-    reporters: ['dots'],
+    reporters: ['dots', 'coverage'],
+
+    preprocessors: {
+      'src/js/**/*.js': 'coverage'
+    },
 
 
     // web server port

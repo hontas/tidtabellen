@@ -1,0 +1,86 @@
+.navbar-icons {
+  color: @gray-light;
+  margin-right: @navbar-padding-horizontal;
+  .navbar-icon {
+    float: right;
+    padding: 9px 10px;
+    .navbar-vertical-align(38px);
+  }
+}
+
+.panel-icons {
+  float: right;
+
+  &.pull-left {
+    margin-left: -4px;
+    margin-right: 5px;
+  }
+
+  .fa {
+    margin-right: 4px;
+    padding: 3px;
+    transition: all 0.4s ease;
+  }
+
+  .collapsed .fa {
+    -webkit-transform: rotateZ(-90deg);
+    -moz-transform: rotateZ(-90deg);
+    -ms-transform: rotateZ(-90deg);
+    -o-transform: rotateZ(-90deg);
+    transform: rotateZ(-90deg);
+  }
+
+  a:last-child .fa {
+    margin-right: 0;
+  }
+}
+
+
+/* Shy inputs in panels */
+@placeholderColor: @gray-light;
+@placeholderShyColor: rgba(255,255,255,0.75);
+
+.input-group .panel-input-muted {
+  background-color: transparent;
+  border-color: @btn-primary-border;
+  color: white;
+  float: right;
+  transition: all 0.5s ease;
+
+  /* Small devices (tablets, 768px and up) */
+  @media (min-width: @screen-sm-min) {
+    width: 40%;
+  }
+
+  &::-webkit-input-placeholder {
+    color: @placeholderShyColor;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    color: @placeholderShyColor;
+  }
+  &::-moz-placeholder {  /* Firefox 19+ */
+    color: @placeholderShyColor;
+  }
+  &:-ms-input-placeholder {
+    color: @placeholderShyColor;
+  }
+
+  &:focus {
+    background-color: white;
+    color: @input-color;
+    width: 100%;
+
+    &::-webkit-input-placeholder {
+      color: @placeholderColor;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      color: @placeholderColor;
+    }
+    &::-moz-placeholder {  /* Firefox 19+ */
+      color: @placeholderColor;
+    }
+    &:-ms-input-placeholder {
+      color: @placeholderColor;
+    }
+  }
+}

@@ -1,3 +1,4 @@
+/* global require */
 var express = require('express');
 var request = require('request');
 var key = require('./key');
@@ -5,7 +6,7 @@ var key = require('./key');
 var app = express(),
 	headers = { accept: 'application/json' };
 
-app.get('/realtid/:query', function(req, res) {
+app.get('/getSite/:query', function(req, res) {
 	request({
 		uri: 'https://api.trafiklab.se/sl/realtid/GetSite.json?key=' + key.getKey('realtid') + '&stationSearch=' + req.params.query,
 		headers: headers
@@ -29,13 +30,22 @@ app.get('/departures/:id', function(req, res) {
 	});
 });
 
-app.get('/sitesInZone/:lat/:long', function(req, res) {
+app.get('/sitesInZone/:x/:y', function(req, res) {
 	request({
-		uri: 'https://api.trafiklab.se/sl/reseplanerare.json?key=' + key.getKey('reseplanerare') + '&SID=@Y=' + req.params.lat + '@X=' + req.params.long,
+		uri: 'https://api.trafiklab.se/sl/reseplanerare.json?key=' + key.getKey('reseplanerare') + '&SID=@Y=' + req.params.y + '@X=' + req.params.x + '&Z=1658',
 		headers: headers
 	}, function(error, response, body) {
 		res.send(body);
 	});
+});
+
+app.get('/reseplanerare/:query', function(req, res) {
+    request({
+        uri: 'https://api.trafiklab.se/sl/reseplanerare.json?key=' + key.getKey('reseplanerare') + '&' + req.params.query,
+        headers: headers
+    }, function(error, response, body) {
+        res.send(body);
+    });
 });
 
 app.use(express.static(__dirname + '/public'));

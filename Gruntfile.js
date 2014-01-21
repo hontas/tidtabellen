@@ -22,12 +22,16 @@ module.exports = function(grunt) {
 
       dist: {
         src: [
-          'src/js/vendor/jquery.js',
-          'src/js/vendor/underscore.js',
-          'src/js/vendor/bootstrap.js',
-          'src/js/vendor/angular.js',
+          'src/vendor/jquery.js',
+          'src/vendor/underscore.js',
+          'src/vendor/bootstrap.js',
+          'src/vendor/angular.js',
+          'src/vendor/moment.js',
 
-          'src/js/*.js'
+          'src/js/*.js',
+
+          'src/js/utils/*.js',
+          'src/js/controllers/*.js'
         ],
         dest: 'public/js/<%= pkg.name %>.js'
       }
@@ -74,7 +78,7 @@ module.exports = function(grunt) {
       },
 
       js: {
-        src: ['src/js/*.js']
+        src: ['src/js/**/*.js']
       }
     },
 
@@ -102,6 +106,7 @@ module.exports = function(grunt) {
     karma: {
       unit: {
         configFile: 'karma.conf.js',
+        reporters: ['dots'],
         singleRun: true
       }
     },
@@ -145,10 +150,18 @@ module.exports = function(grunt) {
       },
 
       js: {
-        files: ['src/js/*.js'],
+        files: ['src/js/**/*.js'],
         tasks: ['jshint:js', 'karma', 'concat'],
         options: {
           livereload: true
+        }
+      },
+
+      fonts: {
+        files: ['src/fonts/*'],
+        tasks: ['clean:fonts', 'copy:fonts'],
+        options: {
+          livereload: false
         }
       },
 
@@ -161,7 +174,7 @@ module.exports = function(grunt) {
       },
 
       less: {
-        files: 'src/css/**/*.less',
+        files: 'src/less/**/*.less',
         tasks: ['less'],
         options: {
           livereload: true

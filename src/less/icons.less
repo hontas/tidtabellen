@@ -1,0 +1,28 @@
+/* custom icons, extending font awesome */
+.tt-icon {
+  width: (18em / 14);
+  height: 1em;
+  background-size: 1em 1em;
+  background-repeat: no-repeat;
+  margin-bottom: -2px;
+}
+
+.tt-icon-bus {
+  background: url(../fonts/bus.svg);
+}
+
+.tt-icon-metro {
+  background: url(../fonts/underground.svg);
+}
+
+.tt-icon-train {
+  background: url(../fonts/train.svg);
+}
+
+.tt-icon-tram {
+  background: url(../fonts/tram.svg);
+}
+
+[class*="tt-icon"] {
+  .tt-icon();
+}
